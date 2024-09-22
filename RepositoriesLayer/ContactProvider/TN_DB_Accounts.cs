@@ -107,7 +107,7 @@ namespace RacoonProvider
             return DAL.ExecuteReader<Entities.Accounts>("sp_TN_DB_Acccounts_newSignUpClientRequest").FirstOrDefault();
 
         }
-        public Entities.Accounts newSignUpTranslatorRequest(string FullName, string Email, string BirthDate, string Password, bool AcceptTerms)
+        public Entities.Accounts newSignUpTranslatorRequest(string FullName, string Email, string BirthDate, string Password, bool AcceptTerms, int Location, int University)
         {
             // Split the FullName into parts
             var nameParts = FullName.Split(' ');
@@ -127,11 +127,13 @@ namespace RacoonProvider
                 new SqlParameter{ ParameterName = "@EmailAddress", Value = Email },
                 new SqlParameter{ ParameterName = "@DateOfBirth", Value = BirthDate },
                 new SqlParameter{ ParameterName = "@Password", Value = Password },
+                new SqlParameter{ ParameterName = "@Location", Value = Location },
+                new SqlParameter{ ParameterName = "@University", Value = University },
             };
             return DAL.ExecuteReader<Entities.Accounts>("sp_TN_DB_Acccounts_newSignUpTranslatorRequest").FirstOrDefault();
 
         }
-        public Entities.Accounts newSignUpSupervisorRequest(string FullName, string Email,string Location, string PhoneNumber, string Username, string University, string Password, bool AcceptTerms)
+        public Entities.Accounts newSignUpSupervisorRequest(string FullName, string Email,int Location, string PhoneNumber, string Username, int University, string Password, bool AcceptTerms)
         {
             var nameParts = FullName.Split(' ');
             string firstName = nameParts.Length > 0 ? nameParts[0] : string.Empty;
@@ -165,6 +167,17 @@ namespace RacoonProvider
             };
 
             return DAL.ExecuteReader<Entities.Accounts>("sp_TN_DB_Acccounts_newSignInRequest").FirstOrDefault();
+
+        }
+        public Entities.Accounts VerifyTranslator(int AccountId)
+        {
+            
+            using var DAL = new DataAccess.DataAccessLayer();
+            DAL.Parameters = new List<SqlParameter> {
+                new SqlParameter{ ParameterName = "@AccountId", Value = AccountId },
+            };
+
+             return DAL.ExecuteReader<Entities.Accounts>("spVerifyTranslator").FirstOrDefault();
 
         }
 

@@ -1,64 +1,29 @@
-﻿@model ViewModel.CurrentTasksListViewModel 
+﻿@model ViewModel.CurrentTasksListViewModel
 @{
     ViewData["Title"] = "ClientIndex";
     Layout = "~/Views/Shared/ClientLayout.cshtml";
 }
-
-
 <!-- banner section start start-->
-<div class="index1-slider-wrapper ps-rel" style="
-    margin-top: -20vh;
-">
-    <div class="overlay-slider" style="
-    padding: 10vh;
-">
+<div class="index1-slider-wrapper ps-rel" style="margin-top: -20vh;">
+    <div class="overlay-slider" style="padding: 10vh;">
         <div class="container">
             <div class="slider-caption">
-                <h2>Connecting the World, <br>  One Language at a Time!</h2>
-                <p>Join Translation Nation, the global platform where millions connect daily to bridge language gaps, <br> unlock job opportunities, and communicate without borders. </p>
+                <h2>Communicate Confidently <br>  Across Borders</h2>
+                <p>Affordable, high-quality translation services designed to meet  <br> your industry’s specific needs </p>
             </div>
-            <div class="sldier-contact-form">
-                <ul>
-                    <li>
-                        <div class="text-field">
-                            <input type="text" placeholder="Search Here">
-                        </div>
-                    </li>
-                    <li>
-                        <div class="select-field">
-                            <select>
-                                <option selected="selected" value="">Select Category</option>
-
-                            </select>
-                        </div>
-                    </li>
-                  
-                    <li class="btn-from">
-                        <a href="javascript:;"><span>Search</span></a>
-                    </li>
-                </ul>
-                <ul class="treding-list">
-                    <li> <span><i class="fas fa-tags"></i></span> Trending Keyword:</li>
-                    <li> <a href="javascript:;"> Literal Translation,</a> </li>
-                    <li> <a href="javascript:;">Legal Translation,</a> </li>
-                    <li> <a href="javascript:;">Medical Translation,</a> </li>
-                    <li> <a href="javascript:;">Financial Translation.</a> </li>
-                </ul>
-            </div>
+            
         </div>
     </div>
-    <div class="container">
+    <div class="container">Select Your Translation
     </div>
 </div>
 <!-- banner section start end-->
-
-
-
 <!-- index page service section  start -->
 <div class="treding-job-wrapper float_left ptb-100">
     <div class="container">
         <div class="home1-section-heading1">
-            <h4>Choose the service you need</h4>
+            <h4>Select Your Translation Service</h4>
+            <h6>Explore Our Full Range of Translation Solutions</h6>
         </div>
         <div class="tabFive custom-tab">
             <div class="row">
@@ -67,21 +32,22 @@
                         <!-- Nav tabs -->
                         <ul id="tabFive" class="nav nav-tabs justify-content-center" style="max-width: fit-content;">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#contentFive-1" data-bs-toggle="tab">Written Translation</a>
+                                <a class="nav-link active" href="#contentFive-1" data-bs-toggle="tab">Document Translation</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#contentFive-4" data-bs-toggle="tab"> Visual Translation</a>
+                                <a class="nav-link" href="#contentFive-4" data-bs-toggle="tab"> Audiovisual Translation</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#contentFive-2" data-bs-toggle="tab">Oral Translation</a>
+                                <a class="nav-link" href="#contentFive-2" data-bs-toggle="tab">Interpreting </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#contentFive-3" data-bs-toggle="tab">Financial Translation</a>
+                                <a class="nav-link" href="#contentFive-3" data-bs-toggle="tab">Business Translation</a>
                             </li>
-
-
                             <li class="nav-item">
                                 <a class="nav-link" href="#contentFive-5" data-bs-toggle="tab"> Legal Translation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contentFive-7" data-bs-toggle="tab"> Literary Translation</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#contentFive-6" data-bs-toggle="tab">All services</a>
@@ -91,10 +57,24 @@
                         <div class="tab-content">
                             <div class="tab-pane fade active show" id="contentFive-1">
                                 <div class="row">
-
-
-
-
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5> General Document Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href="/Client/NewServiceRequest_Document"><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                                         <div class="trending-main-box float_left">
@@ -103,39 +83,125 @@
                                                     <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
                                                 </div>
                                                 <div class="icon-img">
-                                                    <img src="/images/Documents.jpg" alt="img" style="
-    max-width: -webkit-fill-available;
-    margin-top: -2vh;
-    display: ;
-    border-radius: 25vh;
-">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
                                                 </div>
-                                                <a href="jobs-details.html"><h5>Documents Translations</h5></a>
-
+                                                <a href="jobs-details.html">
+                                                    <h5> Technical Document Translation</h5>
+                                                </a>
                                             </div>
                                             <div class="trending-lower-text">
-
-
-
-                                                <a class="custom-btn" href="/Client/NewServiceRequest_Document"><span>Choose</span></a>
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5> Academic Document Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
 
 
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="contentFive-2">
                                 <div class="row">
+
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>  Simultaneous Interpreting</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>  Consecutive Interpreting</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>  Community Interpreting</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>  Video Remote Interpreting (VRI)</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="contentFive-4">
                                 <div class="row">
-
-
-
-
-
                                     <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                                         <div class="trending-main-box float_left">
                                             <div class="trending-upper-text ps-rel">
@@ -144,34 +210,350 @@
                                                 </div>
                                                 <div class="icon-img">
                                                     <img src="/images/Visual.jpg" alt="img" style="
-    max-width: -webkit-fill-available;
-    margin-top: -2vh;
-    display: ;
-    border-radius: 25vh;
-">
+                                          max-width: -webkit-fill-available;
+                                          margin-top: -2vh;
+                                          display: ;
+                                          border-radius: 25vh;
+                                          ">
                                                 </div>
-                                                <a href="jobs-details.html"><h5>Video Translations</h5></a>
-
+                                                <a href="jobs-details.html">
+                                                    <h5>Video Translations</h5>
+                                                </a>
                                             </div>
                                             <div class="trending-lower-text">
-
-
-
                                                 <a class="custom-btn" href="/Client/NewServiceRequest_Video"><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>  Subtitling</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>  Dubbing</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5> Voice-Over Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5> Audio Description</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="contentFive-3">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5> Financial and Economic Document Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5> Corporate Communication Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5> Marketing Material Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5> Business Proposal and Contract Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>Market Analysis and Research Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
                                             </div>
                                         </div>
                                     </div>
 
 
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="contentFive-3">
-                                <div class="row">
-                                </div>
-                            </div>
 
+
+
+                                </div>
+                            </div>
                             <div class="tab-pane fade" id="contentFive-5">
                                 <div class="row">
+
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>Contract Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>Court Documents Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>Immigration Document Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="contentFive-7">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>Book and Novel Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5> Poetry Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5> Play and Script Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>  Short Stories and Essay Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>  Children’s Literature Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="contentFive-6">
@@ -184,19 +566,17 @@
                                                 </div>
                                                 <div class="icon-img">
                                                     <img src="/images/Documents.jpg" alt="img" style="
-    max-width: -webkit-fill-available;
-    margin-top: -2vh;
-    display: ;
-    border-radius: 25vh;
-">
+                                          max-width: -webkit-fill-available;
+                                          margin-top: -2vh;
+                                          display: ;
+                                          border-radius: 25vh;
+                                          ">
                                                 </div>
-                                                <a href="jobs-details.html"><h5>Documents Translations</h5></a>
-
+                                                <a href="jobs-details.html">
+                                                    <h5>Documents Translations</h5>
+                                                </a>
                                             </div>
                                             <div class="trending-lower-text">
-
-
-
                                                 <a class="custom-btn" href="/Client/NewServiceRequest_Document"><span>Choose</span></a>
                                             </div>
                                         </div>
@@ -209,23 +589,458 @@
                                                 </div>
                                                 <div class="icon-img">
                                                     <img src="/images/Visual.jpg" alt="img" style="
-    max-width: -webkit-fill-available;
-    margin-top: -2vh;
-    display: ;
-    border-radius: 25vh;
-">
+                                          max-width: -webkit-fill-available;
+                                          margin-top: -2vh;
+                                          display: ;
+                                          border-radius: 25vh;
+                                          ">
                                                 </div>
-                                                <a href="jobs-details.html"><h5>Video Translations</h5></a>
-
+                                                <a href="jobs-details.html">
+                                                    <h5>Video Translations</h5>
+                                                </a>
                                             </div>
                                             <div class="trending-lower-text">
-
-
-
                                                 <a class="custom-btn" href="/Client/NewServiceRequest_Video"><span>Choose</span></a>
                                             </div>
                                         </div>
                                     </div>
+
+
+                                      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5> Technical Document Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5> Academic Document Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>  Simultaneous Interpreting</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>  Consecutive Interpreting</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>  Community Interpreting</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>  Video Remote Interpreting (VRI)</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>  Subtitling</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>  Dubbing</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5> Voice-Over Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5> Audio Description</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5> Financial and Economic Document Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5> Corporate Communication Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5> Marketing Material Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5> Business Proposal and Contract Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>Market Analysis and Research Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>Contract Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>Court Documents Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>Immigration Document Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>Book and Novel Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5> Poetry Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5> Play and Script Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>  Short Stories and Essay Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                                        <div class="trending-main-box float_left">
+                                            <div class="trending-upper-text ps-rel">
+                                                <div class="heart">
+                                                    <a href="javascript:;" class=""><i class="fas fa-heart"></i></a>
+                                                </div>
+                                                <div class="icon-img">
+                                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available;margin-top: -2vh;border-radius: 25vh;">
+                                                </div>
+                                                <a href="jobs-details.html">
+                                                    <h5>  Children’s Literature Translation</h5>
+                                                </a>
+                                            </div>
+                                            <div class="trending-lower-text">
+                                                <a class="custom-btn" href=""><span>Choose</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                 </div>
                             </div>
                         </div>
@@ -249,25 +1064,13 @@
             <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                 <div class="left-side">
                     <h2>Ads...</h2>
-
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                 <div class="right-side">
                     <h2>Ads...</h2>
-
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-

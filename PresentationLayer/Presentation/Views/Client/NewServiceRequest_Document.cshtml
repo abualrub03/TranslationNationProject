@@ -76,9 +76,16 @@
                                 </li>
                             </ul>
                             <div class="col-lg-12 col-md-12 col-12">
-                                <input id="uploadedDocument" type="file" name="UploadedDocument" style="display: none;">
-                                <a href="javascript:;" id="uploadBtn" class="place_btn" style="margin: 0 auto; display: block;"> <span>Upload Document</span> </a>
+                                <span id="fileName" style="margin: 4vh;display: block;margin-top: 10px;font-style: italic;color: #555;text-align: -webkit-center;"></span>
+
+                                <input id="uploadedDocument" type="file" name="UploadedDocument" style="display: none;" onchange="showFileName()">
+                                <a href="javascript:;" id="uploadBtn" class="place_btn" style="margin: 0 auto; display: block;" onclick="document.getElementById('uploadedDocument').click();">
+                                    <span>Upload Document</span>
+                                </a>
                             </div>
+                            
+                            
+
                         </div>
                     </div>
                 </div>
@@ -89,19 +96,21 @@
                         <div class="budget_img">
                             <img src="/images/icon1.png" alt="">
                         </div>
-                        <div class="budget_text">
-                            <h5>$00.00</h5>
-                            <span>Free</span>
+                        <div class="budget_text" id="priceText">
+                            <h5 id="priceAmount">$00.00</h5>
+                            <span id="priceInfo">Free</span>
                         </div>
+
                     </div>
                     <div class="budget_main_wrapper border-bottom-0">
                         <div class="budget_img">
                             <img src="/images/icon2.png" alt="">
                         </div>
-                        <div class="budget_text">
+                        <div class="budget_text" id="budgetText">
                             <h5>Document Translation</h5>
-                            <span>Allowed to 1000 word</span>
+                            <span id="wordLimitInfo">Allowed up to 250 words</span>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -111,6 +120,44 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+    function showFileName() {
+        var input = document.getElementById('uploadedDocument');
+        var fileName = input.files.length > 0 ? input.files[0].name : 'No file chosen';
+        document.getElementById('fileName').textContent = fileName;
+        if (input.files.length > 0) {
+            // Create a new FormData object
+            var formData = new FormData();
+
+            // Append the selected file to the formData object
+            formData.append('uploadedDocument', input.files[0]);
+
+            // Create a new AJAX request
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/Client/GetWordCount', true); // Replace 'ControllerName' with your controller's name
+
+            // Set up response handling
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    // Parse the JSON response
+                    var response = JSON.parse(xhr.responseText);
+                    if (response.wordCount) {
+                        console.log('Word count: ' + response.wordCount);
+                        if(response.wordCount > 350 ){
+                            updateWordLimitStatus(response.wordCount);
+                            updatePriceText();
+                        }
+                    } else if (response.error) {
+                        console.error(response.error);
+                    }
+                } else {
+                    console.error('An error occurred while uploading the file.');
+                }
+            };
+
+            // Send the formData (containing the file) via AJAX
+            xhr.send(formData);
+        }
+    }
     $(document).ready(function () {
         $('#uploadBtn').on('click', function () {
             $('#uploadedDocument').click();
@@ -139,5 +186,32 @@
             });
         });
     });
+    function updateWordLimitStatus(wordCount) {
+        // Get the elements
+        var budgetTextDiv = document.getElementById('budgetText');
+        var wordLimitInfo = document.getElementById('wordLimitInfo');
+
+        // Check if the word count has reached the limit
+        if (wordCount >= 350) {
+            // Update the text and color to indicate the limit has been reached
+            wordLimitInfo.textContent = 'The uploaded file has reached the 250-word limit';
+            budgetTextDiv.style.color = 'red'; // Change text color to red
+        } else {
+            // Reset the text and color if the word count is below the limit
+            wordLimitInfo.textContent = 'Allowed up to 250 words';
+            budgetTextDiv.style.color = 'black'; // Default text color
+        }
+    }
+    function updatePriceText() {
+        // Get the elements
+        var priceAmount = document.getElementById('priceAmount');
+        var priceInfo = document.getElementById('priceInfo');
+
+        // Update the price color and change the text
+        priceAmount.style.color = 'red'; // Change price to red
+        priceInfo.textContent = 'Reaching the free limit'; // Change the text to "Reaching the free limit"
+        priceInfo.style.color = 'red'; // Change text color to red
+    }
+
 </script>
 

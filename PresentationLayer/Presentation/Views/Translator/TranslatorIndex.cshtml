@@ -1,0 +1,302 @@
+﻿@model ViewModel.CurrentTasksListViewModel
+
+@{
+    ViewData["Title"] = "TranslatorIndex";
+    Layout = "~/Views/Shared/TranslatorLayout.cshtml";
+}
+<!-- banner section start start-->
+<div class="index1-slider-wrapper ps-rel" style="
+    margin-top: -20vh;
+">
+    <div class="overlay-slider" style="
+    padding: 10vh;
+">
+        <div class="container">
+            <div class="slider-caption">
+                <h2>Unlock Opportunities <br>  and Build Your Translation Career Here!</h2>
+                <p>Join a community of skilled translators, expand your portfolio,  <br> and connect with clients globally to showcase your expertise. </p>
+            </div>
+            
+        </div>
+    </div>
+    <div class="container">
+    </div>
+</div>
+<!-- banner section start end-->
+
+
+
+<!-- index page service section  start -->
+<div class="treding-job-wrapper float_left ptb-100">
+    <div class="container">
+        <div class="home1-section-heading1">
+            <h4>Pick Your Translation Project</h4>
+        </div>
+        <div class="tabFive custom-tab">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div role="tabpanel" class="tab-panel" style="margin-bottom: 15vh;">
+                        <!-- Nav tabs -->
+                        <ul id="tabFive" class="nav nav-tabs justify-content-center" style="max-width: fit-content;">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#contentFive-1" data-bs-toggle="tab">Document Translation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contentFive-4" data-bs-toggle="tab"> Audiovisual Translation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contentFive-2" data-bs-toggle="tab">Interpreting</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contentFive-3" data-bs-toggle="tab">Business Translation</a>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contentFive-5" data-bs-toggle="tab"> Legal Translation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contentFive-7" data-bs-toggle="tab"> Literary Translation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contentFive-6" data-bs-toggle="tab">All services</a>
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane fade active show" id="contentFive-1">
+                                <div class="row">
+
+                                    @foreach(var i in Model.currentTasksViewModels)
+                                    {
+
+                                        if (i.TaskServiceCategoryId == "1")
+                                        {
+                                            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                                                <div class="trending-main-box float_left">
+                                                    <div class="trending-upper-text ps-rel">
+                                                        <div class="heart">
+                                                            <a href="javascript:;"><i class="fas fa-heart"></i></a>
+                                                        </div>
+                                                        <div class="icon-img">
+                                                            <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available; margin-top: -2vh; border-radius: 25vh;">
+                                                        </div>
+                                                        <a href="javascript:;"><h5>@i.TaskTitle</h5></a>
+                                                        <p>Document Translation</p>
+                                                    </div>
+                                                    <div class="trending-lower-text">
+                                                        <span>Requested</span>
+                                                        <a href="javascript:;">@i.TaskDeadlineDateTime</a>
+                                                        <p>@i.TaskRequesterDescription</p>
+                                                        <form class="customForm" id="taskForm" action="/Translator/TaskViewDetails" method="post">
+                                                            <input type="hidden" name="Id" value="@i.TaskId">
+                                                            <a id="@i.TaskId" class="custom-btn" href="javascript:;"><span>View Details</span></a>
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+
+
+
+                                    
+
+
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="contentFive-2">
+                                <div class="row">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="contentFive-4">
+                                <div class="row">
+
+
+
+
+
+                                    @foreach (var i in Model.currentTasksViewModels)
+                                    {
+
+                                        if (i.TaskServiceCategoryId == "2")
+                                        {
+                                            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                                                <div class="trending-main-box float_left">
+                                                    <div class="trending-upper-text ps-rel">
+                                                        <div class="heart">
+                                                            <a href="javascript:;"><i class="fas fa-heart"></i></a>
+                                                        </div>
+                                                        <div class="icon-img">
+                                                            <img src="/images/Visual.jpg" alt="img" style="max-width: -webkit-fill-available; margin-top: -2vh; border-radius: 25vh;">
+                                                        </div>
+                                                        <a href="javascript:;"><h5>@i.TaskTitle</h5></a>
+                                                        <p>Visual Translation</p>
+                                                    </div>
+                                                    <div class="trending-lower-text">
+                                                        <span>Requested</span>
+                                                        <a href="javascript:;">@i.TaskDeadlineDateTime</a>
+                                                        <p>@i.TaskRequesterDescription</p>
+                                                        <form class="customForm" id="taskForm" action="/Translator/TaskViewDetails" method="post">
+                                                            <input type="hidden" name="Id" value="@i.TaskId">
+                                                            <a id="@i.TaskId" class="custom-btn" href="javascript:;"><span>View Details</span></a>
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+
+
+
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="contentFive-3">
+                                <div class="row">
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="contentFive-5">
+                                <div class="row">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="contentFive-7">
+                                <div class="row">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="contentFive-6">
+                                <div class="row">
+                                    @foreach (var i in Model.currentTasksViewModels)
+                                    {
+
+                                        if (i.TaskServiceCategoryId == "1")
+                                        {
+                                            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                                                <div class="trending-main-box float_left">
+                                                    <div class="trending-upper-text ps-rel">
+                                                        <div class="heart">
+                                                            <a href="javascript:;"><i class="fas fa-heart"></i></a>
+                                                        </div>
+                                                        <div class="icon-img">
+                                                            <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available; margin-top: -2vh; border-radius: 25vh;">
+                                                        </div>
+                                                        <a href="javascript:;"><h5>@i.TaskTitle</h5></a>
+                                                        <p>Document Translation</p>
+                                                    </div>
+                                                    <div class="trending-lower-text">
+                                                        <span>Requested</span>
+                                                        <a href="javascript:;">@i.TaskDeadlineDateTime</a>
+                                                        <p>@i.TaskRequesterDescription</p>
+                                                        <form class="customForm" id="taskForm" action="/Translator/TaskViewDetails" method="post">
+                                                            <input type="hidden" name="Id" value="@i.TaskId">
+                                                            <a id="@i.TaskId" class="custom-btn" href="javascript:;"><span>View Details</span></a>
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+
+                                    @foreach (var i in Model.currentTasksViewModels)
+                                    {
+
+                                        if (i.TaskServiceCategoryId == "2")
+                                        {
+                                            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                                                <div class="trending-main-box float_left">
+                                                    <div class="trending-upper-text ps-rel">
+                                                        <div class="heart">
+                                                            <a href="javascript:;"><i class="fas fa-heart"></i></a>
+                                                        </div>
+                                                        <div class="icon-img">
+                                                            <img src="/images/Visual.jpg" alt="img" style="max-width: -webkit-fill-available; margin-top: -2vh; border-radius: 25vh;">
+                                                        </div>
+                                                        <a href="javascript:;"><h5>@i.TaskTitle</h5></a>
+                                                        <p>Visual Translation</p>
+                                                    </div>
+                                                    <div class="trending-lower-text">
+                                                        <span>Requested</span>
+                                                        <a href="javascript:;">@i.TaskDeadlineDateTime</a>
+                                                        <p>@i.TaskRequesterDescription</p>
+                                                        <form class="customForm" id="taskForm" action="/Translator/TaskViewDetails" method="post">
+                                                            <input type="hidden" name="Id" value="@i.TaskId">
+                                                            <a id="@i.TaskId" class="custom-btn" href="javascript:;"><span>View Details</span></a>
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="custom-pegination">
+                        <ul>
+                            <li class="preious"> <a href="javascript:;"> <span>Previous</span> </a> </li>
+                            <li class="active"> <a href="javascript:;"> 1 </a> </li>
+                            <li class="preious active"> <a href="javascript:;"> <span>Next</span> </a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- index page service section  end-->
+<div class="professional-main-wrapper ps-rel float_left">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="left-side">
+                    <h2>Ads...</h2>
+
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                <div class="right-side">
+                    <h2>Ads...</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('.custom-btn').on('click', function (e) {
+            e.preventDefault();
+
+            // Find the closest form to the clicked button and submit it
+            $(this).closest('form').submit();
+        });
+
+
+
+
+
+
+    });
+
+</script>
+
+
+
+

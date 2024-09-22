@@ -2,7 +2,42 @@
     ViewData["Title"] = "SignUp";
     Layout = "~/Views/Shared/CustomerLayout.cshtml";
 }
-<div class="login_box_main_wrapper custom-height" id="login_height" style="height: 956px;">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            url: '/Customer/GetCountries', // Replace with your endpoint URL
+            type: 'POST',
+            contentType: 'application/json', // Specify the content type if sending JSON
+            success: function (response) {
+                // Handle the success response here
+                console.log('Success:', response);
+
+
+
+                // Iterate over the response.d list and append options to both elements
+                response.forEach(function (item) {
+                    document.getElementById('LocationTranslator').innerHTML +=
+                        '<option value="' + item.countryId + '">' + item.countryName + '</option>';
+
+                    document.getElementById('LocationSupervisor').innerHTML +=
+                        '<option value="' + item.countryId + '">' + item.countryName + '</option>';
+                });
+            },
+            error: function (error) {
+                // Handle any error that occurs
+                console.log('Error:', error);
+            }
+        });
+
+
+
+    });
+
+
+
+</script>
+<div class="login_box_main_wrapper custom-height" id="login_height" style="height: fit-content;">
     <div class="container">
         <div class="login-logo gap-top">
             <a href="index.html">
@@ -33,77 +68,49 @@
                                 <form action="/Customer/SignUpRequestAsCustomer" method="post">
                                     <div class="form-group field-icon row mb-3">
                                         <div class="col-md-12">
-                                            <input type="text" name="FullName" placeholder="Full name ( four parts )" required>
+                                            <input style="text-align: center;" type="text" name="FullName" placeholder="Full name ( Four Parts )" required>
                                             <span><i class="fa fa-user" aria-hidden="true" style="margin-top: 0.5vh;"></i></span>
                                         </div>
                                     </div>
                                     <div class="form-group field-icon row mb-3">
                                         <div class="col-md-12">
-                                            <input type="email" name="Email" placeholder="Email Address" required>
+                                            <input style="text-align: center;" type="email" name="Email" placeholder="Email Address" required>
                                             <span><i class="fa fa-envelope" aria-hidden="true" style="margin-top: 0.5vh;"></i></span>
                                         </div>
                                     </div>
                                     <div class="form-group field-icon row mb-3">
                                         <div class="col-md-12">
-                                            <input type="date" name="BirthDate" required>
+                                            <input style="text-align: center;" type="date" name="BirthDate" required>
                                             <span><i class="fa fa-user" aria-hidden="true" style="margin-top: 0.5vh;"></i></span>
                                         </div>
                                     </div>
                                     <div class="form-group field-icon row mb-3">
                                         <div class="col-md-12">
-                                            <input type="password" name="Password" placeholder="Password" required>
+                                            <input style="text-align: center;" type="password" name="Password" placeholder="Password" required>
                                             <span><i class="fa fa-unlock-alt" aria-hidden="true" style="margin-top: 0.5vh;"></i></span>
                                         </div>
                                     </div>
                                     <div class="form-group field-icon row mb-3">
                                         <div class="col-md-12">
-                                            <input type="password" name="ConfirmPassword" placeholder="Confirm Password" required>
+                                            <input style="text-align: center;" type="password" name="ConfirmPassword" placeholder="Confirm Password" required>
                                             <span><i class="fa fa-unlock-alt" aria-hidden="true" style="margin-top: 0.5vh;"></i></span>
                                         </div>
                                     </div>
                                     <div class="cond" style="text-align: center;">
-                                        <input type="checkbox" id="AcceptTerms" name="AcceptTerms" value="true" style="margin: 0 auto;" required>
+                                        <input style="text-align: center;" type="checkbox" id="AcceptTerms" name="AcceptTerms" value="true" style="margin: 0 auto;" required>
                                         <label for="AcceptTerms">Accept the terms and conditions</label>
                                     </div>
                                     <div class="login-btn-sec" style="">
-                                        <button type="submit" class="sub-btn" style="margin-left: 5vh;">
-                                            <span>Sign up</span>
-                                        </button>
-                                        <div class="social-btn" style="
+                                        <div style="
+                                 display: flex;
+                                 margin: 0 auto;
+                                 place-content: center;
                                  ">
-                                            <span>- or Sign Up with  -</span>
-                                            <ul>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <span>
-                                                            <svg viewBox="0 0 25 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin-top: 1vh;">
-                                                                <g id="Page-21" stroke="none">
-                                                                    <g id="Social-Icons---Isolated1" transform="translate(-176.000000, -55.000000)">
-                                                                        <path d="M200.78439,55.3395122 L200.78439,62.9141463 L196.28878,62.9258537 C192.764878,62.9258537 192.085854,64.6 192.085854,67.0468293 L192.085854,72.4673171 L200.48,72.4673171 L199.39122,80.9434146 L192.085854,80.9434146 L192.085854,103 L183.329951,103 L183.329951,80.9434146 L176,80.9434146 L176,72.4673171 L183.329951,72.4673171 L183.329951,66.2156098 C183.329951,58.9570732 187.754146,55 194.24,55 C197.331902,55 200,55.2341463 200.78439,55.3395122 Z" id="Facebook4"></path>
-                                                                    </g>
-                                                                </g>
-                                                            </svg>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <span>
-                                                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;margin-top: 1vh;" xml:space="preserve">
-                                                            <path d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016
-                                                   c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
-                                                   c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056
-                                                   c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152
-                                                   c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792
-                                                   c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44
-                                                   C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568
-                                                   C480.224,136.96,497.728,118.496,512,97.248z"></path>
-                                             </svg>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
+                                            <button type="submit" class="sub-btn" style="/* margin-left: 5vh; */">
+                                                <span>Sign up</span>
+                                            </button>
                                         </div>
+                                        
                                         <p style="text-align: center;">If you have an account <a href="login.html" style="margin-right: 1vh;">Sign In now</a></p>
                                     </div>
                                 </form>
@@ -134,77 +141,68 @@
                                 <form action="/Customer/SignUpRequestAsTranslator" method="post">
                                     <div class="form-group field-icon row mb-3">
                                         <div class="col-md-12">
-                                            <input type="text" name="FullName" placeholder="Full name ( four parts )" required>
+                                            <input style="text-align: center;" type="text" name="FullName" placeholder="Full name ( Four Parts )" required>
                                             <span><i class="fa fa-user" aria-hidden="true" style="margin-top: 0.5vh;"></i></span>
                                         </div>
                                     </div>
                                     <div class="form-group field-icon row mb-3">
                                         <div class="col-md-12">
-                                            <input type="email" name="Email" placeholder="Email Address" required>
+                                            <input style="text-align: center;" type="email" name="Email" placeholder="Email Address" required>
                                             <span><i class="fa fa-envelope" aria-hidden="true" style="margin-top: 0.5vh;"></i></span>
                                         </div>
                                     </div>
                                     <div class="form-group field-icon row mb-3">
                                         <div class="col-md-12">
-                                            <input type="date" name="BirthDate" required>
+                                            <input style="text-align: center;" type="date" name="BirthDate" required>
                                             <span><i class="fa fa-user" aria-hidden="true" style="margin-top: 0.5vh;"></i></span>
                                         </div>
                                     </div>
                                     <div class="form-group field-icon row mb-3">
                                         <div class="col-md-12">
-                                            <input type="password" name="Password" placeholder="Password" required>
+                                            <select name="Location" id="LocationTranslator" class="form-control" style="color: #757575;border-radius: 14vh;background: #eaf2f7;TEXT-ALIGN: -WEBKIT-CENTER;">
+                                                <option selected="" value="0" style="">Select your Country</option>
+                                            </select>
+                                            <span><i class="fa fa-university"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group field-icon row mb-3">
+                                        <div class="col-md-12">
+                                            <select name="University" id="UniversityTranslator" class="form-control" style="color: #757575;border-radius: 14vh;background: #eaf2f7;TEXT-ALIGN: -WEBKIT-CENTER;">
+                                                <option selected="" style="">Select your University</option>
+                                                <option value="university1">University 1</option>
+                                                <option value="university2">University 2</option>
+                                                <option value="university3">University 3</option>
+                                            </select>
+                                            <span><i class="fa fa-university"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group field-icon row mb-3">
+                                        <div class="col-md-12">
+                                            <input style="text-align: center;" type="password" name="Password" placeholder="Password" required>
                                             <span><i class="fa fa-unlock-alt" aria-hidden="true" style="margin-top: 0.5vh;"></i></span>
                                         </div>
                                     </div>
                                     <div class="form-group field-icon row mb-3">
                                         <div class="col-md-12">
-                                            <input type="password" name="ConfirmPassword" placeholder="Confirm Password" required>
+                                            <input style="text-align: center;" type="password" name="ConfirmPassword" placeholder="Confirm Password" required>
                                             <span><i class="fa fa-unlock-alt" aria-hidden="true" style="margin-top: 0.5vh;"></i></span>
                                         </div>
                                     </div>
                                     <div class="cond" style="text-align: center;">
-                                        <input type="checkbox" id="AcceptTerms2" name="AcceptTerms" value="true" style="margin: 0 auto;" required>
+                                        <input style="text-align: center;" type="checkbox" id="AcceptTerms2" name="AcceptTerms" value="true" style="margin: 0 auto;" required>
                                         <label for="AcceptTerms2">Accept the terms and conditions</label>
                                     </div>
                                     <div class="login-btn-sec" style="">
-                                        <button type="submit" class="sub-btn" style="margin-left: 5vh;">
-                                            <span>Sign up</span>
-                                        </button>
-                                        <div class="social-btn" style="
+                                        <div style="
+                                 display: flex;
+                                 margin: 0 auto;
+                                 place-content: center;
                                  ">
-                                            <span>- or Sign Up with  -</span>
-                                            <ul>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <span>
-                                                            <svg viewBox="0 0 25 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin-top: 1vh;">
-                                                                <g id="Page-21" stroke="none">
-                                                                    <g id="Social-Icons---Isolated1" transform="translate(-176.000000, -55.000000)">
-                                                                        <path d="M200.78439,55.3395122 L200.78439,62.9141463 L196.28878,62.9258537 C192.764878,62.9258537 192.085854,64.6 192.085854,67.0468293 L192.085854,72.4673171 L200.48,72.4673171 L199.39122,80.9434146 L192.085854,80.9434146 L192.085854,103 L183.329951,103 L183.329951,80.9434146 L176,80.9434146 L176,72.4673171 L183.329951,72.4673171 L183.329951,66.2156098 C183.329951,58.9570732 187.754146,55 194.24,55 C197.331902,55 200,55.2341463 200.78439,55.3395122 Z" id="Facebook4"></path>
-                                                                    </g>
-                                                                </g>
-                                                            </svg>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <span>
-                                                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;margin-top: 1vh;" xml:space="preserve">
-                                                            <path d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016
-                                                   c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
-                                                   c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056
-                                                   c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152
-                                                   c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792
-                                                   c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44
-                                                   C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568
-                                                   C480.224,136.96,497.728,118.496,512,97.248z"></path>
-                                             </svg>
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
+                                            <button type="submit" class="sub-btn" style="/* margin-left: 5vh; */">
+                                                <span>Sign up</span>
+                                            </button>
                                         </div>
+                                        
                                         <p style="text-align: center;">If you have an account <a href="login.html" style="margin-right: 1vh;">Sign In now</a></p>
                                     </div>
                                 </form>
@@ -213,7 +211,15 @@
                         <div class="col-lg-6 col-md-6 col-12" style="
                      margin-top: 9vh;
                      ">
-                            <div class="login-img">
+                            <div class="login-img" style="
+                        /* margin: 0 auto; */
+                        padding-left: 5vh;
+                        padding-right: 2vh;
+                        text-align: -webkit-center;
+                        ">
+                                <p style="text-align: center;">
+                                    We provide students with hands-on translation experience to build skills and prepare for the job market.
+                                </p>
                                 <img src="/images/login-side.png" alt="img" style="
                            /* margin-top: 5vh; */
                            ">
@@ -223,43 +229,86 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                
-                <div class="signin-wrapper">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-12">
+                <div class="signin-wrapper" style="">
+                    <div class="row" style="margin: 0 auto;">
+                        <div class="col-lg-12 col-md-12 col-12" style="margin: 0 auto;">
                             <div class="left-side">
                                 <h4 style="text-align: -webkit-center;">Sign up as Supervisor</h4>
-                                <form id="signup-form">
-                                    <div class="form-group field-icon row mb-3">
-                                        <div class="col-md-12">
-                                            <input type="text" name="FullName" id="FullName" placeholder="Full Name (Four parts)">
-                                            <span><i class="fa fa-user"></i></span>
+                                <form id="signup-form" action="/Customer/SignUpRequestAsSupervisor" method="post" >
+                                    <div class="container">
+                                        <div class="row">
+                                            <!-- Left Column -->
+                                            <div id="Left" class="col-md-6">
+                                                <div class="form-group field-icon row mb-3">
+                                                    <div class="col-md-12">
+                                                        <input style="text-align: center;" type="text" name="FullName" id="FullName" placeholder="Full Name (Four parts)">
+                                                        <span><i class="fa fa-user"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group field-icon row mb-3">
+                                                    <div class="col-md-12">
+                                                        <input style="text-align: center;" type="email" name="Email" id="Email" placeholder="Email Address">
+                                                        <span><i class="fa fa-envelope"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group field-icon row mb-3">
+                                                    <div class="col-md-12">
+                                                        <select name="Location" id="LocationSupervisor" class="form-control" style="color: #757575;border-radius: 14vh;background: #eaf2f7;TEXT-ALIGN: -WEBKIT-CENTER;">
+                                                            <option selected="" value="0" style="">Select your Country</option>
+                                                        </select>
+                                                        <span><i class="fa fa-university"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group field-icon row mb-3">
+                                                    <div class="col-md-12">
+                                                        <input style="text-align: center;" type="text" name="PhoneNumber" id="PhoneNumber" placeholder="Phone Number">
+                                                        <span><i class="fa fa-phone"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Right Column -->
+                                            <div id="Right" class="col-md-6">
+                                                <div class="form-group field-icon row mb-3">
+                                                    <div class="col-md-12">
+                                                        <input style="text-align: center;" type="text" name="Username" id="Username" placeholder="User Name">
+                                                        <span><i class="fa fa-user"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group field-icon row mb-3">
+                                                    <div class="col-md-12">
+                                                        <select name="University" id="UniversitySupervisor" class="form-control" style="color: #757575;border-radius: 14vh;background: #eaf2f7;TEXT-ALIGN: -WEBKIT-CENTER;">
+                                                            <option selected="" style="">Select your University</option>
+                                                            <option value="university1">University 1</option>
+                                                            <option value="university2">University 2</option>
+                                                            <option value="university3">University 3</option>
+                                                        </select>
+                                                        <span><i class="fa fa-university"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group field-icon row mb-3">
+                                                    <div class="col-md-12">
+                                                        <input style="text-align: center;" type="password" name="Password" id="Password" placeholder="Password">
+                                                        <span><i class="fa fa-unlock-alt"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group field-icon row mb-3">
+                                                    <div class="col-md-12">
+                                                        <input style="text-align: center;" type="password" name="ConfirmPassword" id="ConfirmPassword" placeholder="Confirm Password">
+                                                        <span><i class="fa fa-unlock-alt"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group field-icon row mb-3">
-                                        <div class="col-md-12">
-                                            <input type="email" name="Email" id="Email" placeholder="Email Address">
-                                            <span><i class="fa fa-envelope"></i></span>
+                                        <!-- Terms and Submit Button -->
+                                        <div class="text-center">
+                                            <div class="cond" style="text-align: center;">
+                                                <input style="text-align: center;" type="checkbox" id="AcceptTerms" name="AcceptTerms" value="true">
+                                                <label for="AcceptTerms">Accept the terms and conditions</label>
+                                            </div>
+                                            <div class="login-btn-sec" style="margin: 0 auto;display: table;">
+                                                <button type="submit" class="sub-btn">Sign up</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group field-icon row mb-3">
-                                        <div class="col-md-12">
-                                            <input type="text" name="Location" id="Location" placeholder="Location">
-                                            <span><i class="fa fa-map-marker"></i></span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group field-icon row mb-3">
-                                        <div class="col-md-12">
-                                            <input type="text" name="PhoneNumber" id="PhoneNumber" placeholder="Phone Number">
-                                            <span><i class="fa fa-phone"></i></span>
-                                        </div>
-                                    </div>
-                                    <div class="cond" style="text-align: center;">
-                                        <input type="checkbox" id="AcceptTerms" name="AcceptTerms" value="true">
-                                        <label for="AcceptTerms">Accept the terms and conditions</label>
-                                    </div>
-                                    <div class="login-btn-sec">
-                                        <button type="submit" class="sub-btn">Sign up</button>
                                     </div>
                                 </form>
                             </div>
@@ -267,74 +316,72 @@
                         <div class="col-lg-6 col-md-6 col-12">
                             <div class="right-side">
                                 <form>
-                                    <div class="form-group field-icon row mb-3">
-                                        <div class="col-md-12">
-                                            <input type="text" name="Username" id="Username" placeholder="User Name">
-                                            <span><i class="fa fa-user"></i></span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group field-icon row mb-3">
-                                        <div class="col-md-12">
-                                            <input type="text" name="University" id="University" placeholder="University">
-                                            <span><i class="fa fa-university"></i></span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group field-icon row mb-3">
-                                        <div class="col-md-12">
-                                            <input type="password" name="Password" id="Password" placeholder="Password">
-                                            <span><i class="fa fa-unlock-alt"></i></span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group field-icon row mb-3">
-                                    <div class="col-md-12">
-                                        <input type="password" name="ConfirmPassword" id="ConfirmPassword" placeholder="Confirm Password">
-                                        <span><i class="fa fa-unlock-alt"></i></span>
-                                    </div>
-                                </div>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 </div>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
 <script type="text/javascript">
-
     $(document).ready(function () {
-        $('#signup-form').on('submit', function (event) {
-            event.preventDefault(); // Prevent the form from submitting the traditional way
 
-            var formData = {
-                FullName: $('#FullName').val(),
-                Email: $('#Email').val(),
-                Location: $('#Location').val(),
-                PhoneNumber: $('#PhoneNumber').val(),
-                Username: $('#Username').val(),
-                University: $('#University').val(),
-                Password: $('#Password').val(),
-                ConfirmPassword: $('#ConfirmPassword').val(),
-                AcceptTerms: $('#AcceptTerms').is(':checked') // Check if the checkbox is checked
-            };
+        $('#LocationSupervisor').change(function () {
+            var selectedValue = $(this).val();
+            console.log(selectedValue);
+            if (selectedValue !== "0") {
+                console.log(selectedValue);
+                $.ajax({
+                    url: '/Customer/GetUniveritiesBasedOnId', // Your endpoint URL
+                    type: 'GET', // Use GET for this request
+                    data: { id: selectedValue }, // Pass data as query parameters
+                    success: function (response) {
+                        console.log('Success:', response);
+                        $('#UniversitySupervisor').empty();
 
-            $.ajax({
-                url: '/Customer/SignUpRequestAsSupervisor',
-                method: 'POST',
-                data: formData,
-                success: function (response) {
-                    // Handle success, e.g., redirect to another page
-                    window.location.href = '/Customer/SignIn';
-                },
-                error: function (xhr, status, error) {
-                    
-                    alert('Sign-up failed. Please check your input.');
-                }
-            });
+                        response.forEach(function (item) {
+                            $('#UniversitySupervisor').append(
+                                '<option value="' + item.universityId + '">' + item.universityName + '</option>'
+                            );
+                        });
+                    },
+                    error: function (error) {
+                        console.log('Error:', error);
+                    }
+                });
+
+            }
         });
+        $('#LocationTranslator').change(function () {
+            var selectedValue = $(this).val();
+            console.log(selectedValue);
+            if (selectedValue !== "0") {
+                console.log(selectedValue);
+                $.ajax({
+                    url: '/Customer/GetUniveritiesBasedOnId', // Your endpoint URL
+                    type: 'GET', // Use GET for this request
+                    data: { id: selectedValue }, // Pass data as query parameters
+                    success: function (response) {
+                        console.log('Success:', response);
+                        $('#UniversityTranslator').empty();
+
+                        response.forEach(function (item) {
+                            $('#UniversityTranslator').append(
+                                '<option value="' + item.universityId + '">' + item.universityName + '</option>'
+                            );
+                        });
+                    },
+                    error: function (error) {
+                        console.log('Error:', error);
+                    }
+                });
+
+            }
+        });
+
+        
     });
 </script>

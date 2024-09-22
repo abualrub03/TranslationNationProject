@@ -77,8 +77,12 @@
                                 </li>
                             </ul>
                             <div class="col-lg-12 col-md-12 col-12">
-                                <input id="uploadedDocument" type="file" name="UploadedDocument" style="display: none;">
-                                <a href="javascript:;" id="uploadBtn" class="place_btn" style="margin: 0 auto; display: block;"> <span>Upload Video</span> </a>
+                                <span id="fileName" style="margin: 4vh;display: block;margin-top: 10px;font-style: italic;color: #555;text-align: -webkit-center;"></span>
+
+                                <input id="uploadedDocument" type="file" name="UploadedDocument" style="display: none;" onchange="showFileName()">
+                                <a href="javascript:;" id="uploadBtn" class="place_btn" style="margin: 0 auto; display: block;" onclick="document.getElementById('uploadedDocument').click();">
+                                    <span>Upload Document</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -112,6 +116,11 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
+    function showFileName() {
+        var input = document.getElementById('uploadedDocument');
+        var fileName = input.files.length > 0 ? input.files[0].name : 'No file chosen';
+        document.getElementById('fileName').textContent = fileName;
+    }
     $(document).ready(function () {
         $('#uploadBtn').on('click', function () {
             $('#uploadedDocument').click();

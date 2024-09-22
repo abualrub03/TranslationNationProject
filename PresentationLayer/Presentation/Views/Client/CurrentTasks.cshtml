@@ -45,7 +45,7 @@
                             <div class="trending-lower-text">
                                 <span>@tasks.TaskStatus</span>
                                 <a href="javascript:;">@tasks.TaskDeadlineDateTime</a>
-                                <p>@tasks.TaskRequesterDescription</p>
+                                <p>@tasks.TaskTitle</p>
                                 <form class="customForm" id="taskForm" action="/Client/TaskViewDetails" method="post">
                                     <input type="hidden" name="Id" value="@tasks.TaskId">
                                     <a id="('viewDetailsButton'+@tasks.TaskId)" class="custom-btn" href="javascript:;"><span>View Details</span></a>

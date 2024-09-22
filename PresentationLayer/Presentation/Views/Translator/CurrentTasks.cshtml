@@ -1,0 +1,126 @@
+﻿@model ViewModel.CurrentTasksListViewModel
+
+@{
+    ViewData["Title"] = "CurrentTasks";
+    Layout = "~/Views/Shared/TranslatorLayout.cshtml";
+}
+
+
+<!-- banner section start start-->
+<div class="index1-listing-slider-wrapper float_left" style="margin-top: -15vh;">
+    <div class="container">
+        <div class="slider-text text-center">
+            <h4 style="margin-top: 15vh;">Current Services</h4>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- banner section start end-->
+<!-- inner page -->
+
+<div class="inner-page-main-wrapper float_left">
+    <div class="container">
+        <div class="home1-section-heading1 mb-4">
+            <h6>Your</h6>
+            <h4>Active Services</h4>
+        </div>
+        <div class="row">
+
+            @foreach (var tasks in Model.currentTasksViewModels)
+            {
+                if (tasks.TaskServiceCategoryId == "Written Translations")
+                {
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="trending-main-box float_left">
+                            <div class="trending-upper-text ps-rel">
+                                <div class="heart">
+                                    <a href="javascript:;"><i class="fas fa-heart"></i></a>
+                                </div>
+                                <div class="icon-img">
+                                    <img src="/images/Documents.jpg" alt="img" style="max-width: -webkit-fill-available; margin-top: -2vh; border-radius: 25vh;">
+                                </div>
+                                <a href="javascript:;"><h5>@tasks.TaskServiceCategoryId</h5></a>
+                                <p>@tasks.TaskServiceId</p>
+                            </div>
+                            <div class="trending-lower-text">
+                                <span>@tasks.TaskStatus</span>
+                                <a href="javascript:;">@tasks.TaskDeadlineDateTime</a>
+                                <p>@tasks.TaskRequesterDescription</p>
+                                <form class="customForm" id="taskForm" action="/Translator/PickedTaskViewDetails" method="post">
+                                    <input type="hidden" name="Id" value="@tasks.TaskId">
+                                    <a id="('viewDetailsButton'+@tasks.TaskId)" class="custom-btn" href="javascript:;"><span>View Details</span></a>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="trending-main-box float_left">
+                            <div class="trending-upper-text ps-rel">
+                                <div class="heart">
+                                    <a href="javascript:;"><i class="fas fa-heart"></i></a>
+                                </div>
+                                <div class="icon-img">
+                                    <img src="/images/Visual.jpg" alt="img" style="max-width: -webkit-fill-available; margin-top: -2vh; border-radius: 25vh;">
+                                </div>
+                                <a href="javascript:;"><h5>@tasks.TaskServiceCategoryId</h5></a>
+                                <p>@tasks.TaskServiceId</p>
+                            </div>
+                            <div class="trending-lower-text">
+                                <span>@tasks.TaskStatus</span>
+                                <a href="javascript:;">@tasks.TaskDeadlineDateTime</a>
+                                <p>@tasks.TaskRequesterDescription</p>
+                                <form class="customForm" id="taskForm" action="/Translator/PickedTaskViewDetails" method="post">
+                                    <input type="hidden" name="Id" value="@tasks.TaskId">
+                                    <a id="viewDetailsButton" class="custom-btn" href="javascript:;"><span>View Details</span></a>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+
+        <div class="custom-pegination">
+            <ul>
+                <li class="preious"> <a href="javascript:;"> <span>Previous</span> </a> </li>
+                <li class="active"> <a href="javascript:;"> 1 </a> </li>
+
+
+
+
+                <li class="preious active"> <a href="javascript:;"> <span>Next</span> </a> </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('.custom-btn').on('click', function (e) {
+            e.preventDefault();
+
+            // Find the closest form to the clicked button and submit it
+            $(this).closest('form').submit();
+        });
+
+
+
+
+
+
+    });
+
+</script>
+
+
