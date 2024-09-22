@@ -21,6 +21,16 @@
             <!--favicon-->
             <link rel="shortcut icon" type="image/png" href="/images/fav-icon.png">
          </head>
+<script type="text/javascript">
+    function switchLanguage(langSelect) {
+        var selectedLang = langSelect.value;
+        var currentUrl = window.location.href.split('?')[0];  // Get the base URL without parameters
+
+        // Redirect to the URL with the selected language parameter
+        window.location.href = currentUrl + '?lang=' + selectedLang;
+    }
+</script>
+
          <body data-new-gr-c-s-check-loaded="14.1192.0" data-gr-ext-installed="">
             <div id="preloader" style="display: none;">
                <div id="status" style="display: none;">
@@ -87,6 +97,13 @@
     border-radius: 5vh;
 ">About Us</a>
                                     </li>
+                                    <li class="language-switcher">
+                                        <select id="languageDropdown" onchange="switchLanguage(this)">
+                                            <option value="en" selected>English</option>
+                                            <option value="ar">Arabic</option>
+                                        </select>
+                                    </li>
+
                                 </ul>
                             </nav>
                             <ul class="d-xl-flex d-lg-flex d-md-none d-sm-none d-none social-media-icons" style="
