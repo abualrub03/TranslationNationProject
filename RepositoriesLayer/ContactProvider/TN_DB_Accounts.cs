@@ -107,7 +107,7 @@ namespace RacoonProvider
             return DAL.ExecuteReader<Entities.Accounts>("sp_TN_DB_Acccounts_newSignUpClientRequest").FirstOrDefault();
 
         }
-        public Entities.Accounts newSignUpTranslatorRequest(string FullName, string Email, string BirthDate, string Password, bool AcceptTerms, int Location, int University)
+        public Entities.Accounts newSignUpTranslatorRequest(string FullName, string Email, string Password, int Location, int University , string BcMajor , string BcFaculty , string MajorYear , string BcGPA , string HowDidUKnowUs ,  string PhoneNumber )
         {
             // Split the FullName into parts
             var nameParts = FullName.Split(' ');
@@ -125,10 +125,19 @@ namespace RacoonProvider
                 new SqlParameter{ ParameterName = "@ThirdName", Value = thirdName },
                 new SqlParameter{ ParameterName = "@LastName", Value = lastName },
                 new SqlParameter{ ParameterName = "@EmailAddress", Value = Email },
-                new SqlParameter{ ParameterName = "@DateOfBirth", Value = BirthDate },
+                new SqlParameter{ ParameterName = "@DateOfBirth", Value = " " },
                 new SqlParameter{ ParameterName = "@Password", Value = Password },
                 new SqlParameter{ ParameterName = "@Location", Value = Location },
                 new SqlParameter{ ParameterName = "@University", Value = University },
+
+
+                new SqlParameter{ ParameterName = "@BcMajor", Value = BcMajor },
+                new SqlParameter{ ParameterName = "@BcFaculty", Value = BcFaculty },
+                new SqlParameter{ ParameterName = "@MajorYear", Value = MajorYear },
+                new SqlParameter{ ParameterName = "@BcGPA", Value = BcGPA },
+                new SqlParameter{ ParameterName = "@HowDidUKnowUs", Value = HowDidUKnowUs },
+                new SqlParameter{ ParameterName = "@PhoneNumber", Value = PhoneNumber },
+
             };
             return DAL.ExecuteReader<Entities.Accounts>("sp_TN_DB_Acccounts_newSignUpTranslatorRequest").FirstOrDefault();
 

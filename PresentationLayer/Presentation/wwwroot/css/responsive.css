@@ -632,9 +632,10 @@
   .pricing-main-wrapper .custom-pricing-wrapper .nav-pills li + li {
     margin-bottom: 0;
   }
-  .footer-main-wrapper {
-    padding: 50px 0px 0px;
-  }
+    .footer-main-wrapper {
+        padding: 50px 0px 0px;
+        margin-top: 50vh;
+    }
   .testimonial-four-wrapper .forth-slider .owl-carousel .owl-item .testimonial-slider .test-content {
     padding-left: 70px;
     padding-top: 16px;

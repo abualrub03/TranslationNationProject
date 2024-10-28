@@ -249,11 +249,11 @@ namespace TranslationNation.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> SignUpRequestAsTranslatorAsync(string FullName, string Email, int Location, int University, string BirthDate, string Password, string ConfirmPassword, bool AcceptTerms, [FromServices] EmailService emailService)
+        public async Task<IActionResult> SignUpRequestAsTranslatorAsync(string FullName, string Email, int Location, int University, string Major, string Faculty, string MajorYear, string GPA,string PhoneNumber,string KnowAboutTN, string Password, string ConfirmPassword, bool AcceptTerms , [FromServices] EmailService emailService)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) 
             {
-                var data = new RacoonProvider.TN_DB_Accounts().newSignUpTranslatorRequest(FullName, Email, BirthDate, Password, AcceptTerms, Location, University);
+                var data = new RacoonProvider.TN_DB_Accounts().newSignUpTranslatorRequest(FullName, Email, Password, Location, University , Major , Faculty , MajorYear , GPA , KnowAboutTN , PhoneNumber);
                 if (data == null)
                 {
                     ModelState.AddModelError("FormValidation", "Wrong Username or Password");
@@ -282,7 +282,8 @@ namespace TranslationNation.Controllers
                 return View("SignUp");
             }
 
-            return RedirectToAction("SignIn", "Customer");
+
+            return await SignInRequest(Email, Password);
         }
 
 
